@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sony Beauty Academics | Beauty & Makeup Booking</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;color:#3b2632;background:#fff9fc;line-height:1.6}
+header{background:#fff;padding:18px 7%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px #00000012}
+.logo{font-size:24px;font-weight:700;color:#a33b70}.logo span{display:block;font-size:11px;letter-spacing:3px;color:#777}
+nav a{margin-left:22px;text-decoration:none;color:#4b3540;font-weight:600}
+.hero{padding:85px 7%;text-align:center;background:linear-gradient(135deg,#ffe8f2,#fff7ec)}
+.hero h1{font-size:48px;color:#9b3266;margin-bottom:12px}
+.hero p{max-width:700px;margin:auto;font-size:18px}
+.btn{display:inline-block;margin-top:25px;padding:13px 25px;border-radius:30px;background:#a33b70;color:#fff;text-decoration:none;border:0;font-weight:bold;cursor:pointer}
+section{padding:60px 7%}h2{text-align:center;font-size:32px;margin-bottom:30px;color:#8f2f60}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
+.card{background:white;padding:25px;border-radius:18px;text-align:center;box-shadow:0 5px 20px #0000000d}
+.card h3{margin:10px 0;color:#9b3266}.price{font-weight:bold;font-size:18px}
+.booking{background:#fff0f6}.form{max-width:650px;margin:auto;background:white;padding:30px;border-radius:20px;box-shadow:0 5px 20px #00000012}
+label{display:block;margin-top:15px;font-weight:600}input,select,textarea{width:100%;padding:12px;margin-top:6px;border:1px solid #ddd;border-radius:10px;font-size:15px}
+textarea{min-height:90px}.submit{width:100%;margin-top:20px}
+#message{text-align:center;margin-top:18px;font-weight:bold;color:#9b3266}
+footer{text-align:center;padding:30px;background:#3f2935;color:white}
+@media(max-width:700px){nav{display:none}.hero h1{font-size:36px}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">Sony Beauty Academics<span>BEAUTY • MAKEUP • ACADEMY</span></div>
+<nav><a href="#home">Home</a><a href="#services">Services</a><a href="#booking">Book Now</a><a href="#contact">Contact</a></nav>
+</header>
+
+<div class="hero" id="home">
+<h1>Sony Beauty Academics</h1>
+<p>Professional beauty services, makeup, hairstyles, saree draping and mehendi. Book your appointment online easily.</p>
+<a class="btn" href="#booking">Book an Appointment</a>
+</div>
+
+<section id="services">
+<h2>Our Beauty Services</h2>
+<div class="cards">
+<div class="card"><div style="font-size:35px">💄</div><h3>Makeup</h3><p>Party & event makeup</p><p class="price">From ₹500</p></div>
+<div class="card"><div style="font-size:35px">💇‍♀️</div><h3>Hairstyle</h3><p>Stylish hair designs</p><p class="price">From ₹100</p></div>
+<div class="card"><div style="font-size:35px">🥻</div><h3>Saree Draping</h3><p>Neat & elegant saree setting</p><p class="price">₹150</p></div>
+<div class="card"><div style="font-size:35px">🌸</div><h3>Mehendi</h3><p>Traditional & Arabic designs</p><p class="price">From ₹100</p></div>
+<div class="card"><div style="font-size:35px">✨</div><h3>Beauty Services</h3><p>Basic beauty & grooming</p><p class="price">Contact for price</p></div>
+<div class="card"><div style="font-size:35px">🎓</div><h3>Beauty Academy</h3><p>Learn beauty & makeup skills</p><p class="price">Course enquiry</p></div>
+</div>
+</section>
+
+<section class="booking" id="booking">
+<h2>Online Appointment Booking</h2>
+<div class="form">
+<form id="bookingForm">
+<label>Your Name</label><input id="name" required placeholder="Enter your name">
+<label>Mobile Number</label><input id="phone" required type="tel" pattern="[0-9]{10}" placeholder="10-digit mobile number">
+<label>Select Service</label>
+<select id="service" required>
+<option value="">Choose a service</option><option>Makeup</option><option>Hairstyle</option><option>Saree Draping</option><option>Mehendi</option><option>Beauty Service</option><option>Beauty Academy Course Enquiry</option>
+</select>
+<label>Preferred Date</label><input id="date" required type="date">
+<label>Preferred Time</label><input id="time" required type="time">
+<label>Message / Requirements</label><textarea id="notes" placeholder="Tell us any special requirements"></textarea>
+<button class="btn submit" type="submit">Confirm Booking Request</button>
+</form>
+<div id="message"></div>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact Sony Beauty Academics</h2>
+<div class="card">
+<p><strong>📞 Phone:</strong> 7207800835</p>
+<p><strong>📍 Location:</strong> Akruti PG Hostel, KBHP Colony, Road 3, Street 5, Hyderabad</p>
+<p><strong>💬 WhatsApp Booking:</strong> <a target="_blank" href="https://wa.me/917207800835">Chat on WhatsApp</a></p><p><strong>💬 Booking:</strong> Online appointment request available above</p>
+</div>
+</section>
+
+<footer>© 2026 Sony Beauty Academics • Beauty & Makeup Services</footer>
+
+<script>
+document.getElementById("date").min=new Date().toISOString().split("T")[0];
+document.getElementById("bookingForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ const name=document.getElementById("name").value;
+ const service=document.getElementById("service").value;
+ const date=document.getElementById("date").value;
+ const time=document.getElementById("time").value;
+ const notes=document.getElementById("notes").value;
+ const text=`New Sony Beauty Academics Booking Request\n\nName: ${name}\nMobile: ${document.getElementById("phone").value}\nService: ${service}\nDate: ${date}\nTime: ${time}\nRequirements: ${notes || "None"}`;
+ const wa=`https://wa.me/917207800835?text=${encodeURIComponent(text)}`;
+ document.getElementById("message").innerHTML=`Booking details ready. <a href="${wa}" target="_blank">Send booking request on WhatsApp</a>`;
+ window.open(wa,"_blank");
+ this.reset();
+});
+</script>
+</body>
+</html>
